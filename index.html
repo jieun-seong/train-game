@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<title>The Night Sleeper</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0d0b0c;--wood:#2a1a12;--wood2:#3f2718;--edge:#8a5a2f;--cream:#f2dfbd;--muted:#bb9f7c;--amber:#f0a94a;--red:#c9483a}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;height:100%;background:var(--bg);overflow:hidden;color:var(--cream);font-family:"Pixelify Sans","Courier New",monospace}
+#c{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);image-rendering:pixelated;touch-action:none;display:block}
+#toast{position:fixed;left:50%;bottom:calc(16px + env(safe-area-inset-bottom));transform:translateX(-50%);width:max-content;max-width:min(88vw,400px);background:rgba(20,12,9,.92);border:2px solid var(--edge);padding:8px 12px;font-size:18px;line-height:1.2;text-align:center;opacity:0;transition:opacity .25s;pointer-events:none}
+#toast.show{opacity:1}
+#modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;padding:14px;background:rgba(8,6,8,.55)}
+#modal.show{display:flex}
+#sheet{background:var(--wood);border:3px solid var(--edge);outline:3px solid #150c08;width:min(430px,100%);max-height:calc(100dvh - 28px);overflow:auto;padding:18px}
+h1{font-size:46px;line-height:1;margin:0 0 6px;font-weight:600;color:var(--amber)}
+h2{font-size:30px;line-height:1.05;margin:0 0 8px;font-weight:600;color:var(--amber)}
+p{margin:0 0 10px;font-size:20px;line-height:1.2}
+.small{font-size:17px;color:var(--muted)}
+button{font:inherit;font-size:20px;color:var(--cream);background:var(--wood2);border:2px solid var(--edge);padding:9px 12px;min-height:46px;cursor:pointer;width:100%;text-align:left;margin-top:7px;display:block}
+button:hover,button:focus-visible{background:#5a381f;outline:2px solid var(--amber);outline-offset:0}
+button span{display:block;font-size:17px;color:var(--muted)}
+button.main{background:var(--amber);color:#2a1a12;text-align:center;font-weight:600;border-color:#ffd48c}
+button.main:hover,button.main:focus-visible{background:#ffc069}
+</style>
+</head>
+<body>
+<canvas id="c" width="270" height="480" aria-label="Inside a lamp-lit sleeper compartment at night, with figures in the fog beyond the windows"></canvas>
+<div id="toast" role="status"></div>
+<div id="modal"><div id="sheet" role="dialog" aria-modal="true"></div></div>
+<script src="game.js"></script>
+</body>
+</html>
